@@ -58,29 +58,18 @@ A full-stack MERN (MongoDB, Express.js, React, Node.js) application for managing
    cd ../frontend
    npm install
    ```
-
-4. Set up environment variables:
-   - Copy `backend/.env.example` to `backend/.env`
-   - Update the `MONGO_URI` with your MongoDB connection string
-
 ## Running the Application
 
 1. Start the backend server:
    ```bash
    cd backend
    npm run dev
-   ```
-   The backend will run on http://localhost:5000
 
 2. Start the frontend development server:
    ```bash
    cd frontend
    npm start
    ```
-   The frontend will run on http://localhost:3000
-
-3. Open your browser and navigate to http://localhost:3000
-
 ## API Endpoints
 
 - `GET /api/recipes` - Get all recipes
@@ -102,10 +91,3 @@ A full-stack MERN (MongoDB, Express.js, React, Node.js) application for managing
   - Axios for API calls
   - Tailwind CSS for styling
 
-## Deployment
-
-This application is prepared for deployment following the Week 7 assignment requirements. Refer to `Week7-Assignment.md` for detailed deployment instructions.
-
-## License
-
-This project is part of the MERN Stack Development course.
