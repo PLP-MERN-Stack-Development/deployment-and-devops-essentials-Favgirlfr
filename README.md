@@ -1,77 +1,111 @@
-# Deployment and DevOps for MERN Applications
+# Recipe Manager - MERN Stack Application
 
-This assignment focuses on deploying a full MERN stack application to production, implementing CI/CD pipelines, and setting up monitoring for your application.
+A full-stack MERN (MongoDB, Express.js, React, Node.js) application for managing recipes. Users can add, view, edit, and delete recipes with ingredients, instructions, and other details.
 
-## Assignment Overview
+## Features
 
-You will:
-1. Prepare your MERN application for production deployment
-2. Deploy the backend to a cloud platform
-3. Deploy the frontend to a static hosting service
-4. Set up CI/CD pipelines with GitHub Actions
-5. Implement monitoring and maintenance strategies
+- Add new recipes with title, ingredients, instructions, prep/cook time, servings, and image
+- View all recipes in a responsive grid layout
+- Edit existing recipes
+- Delete recipes
+- Responsive design with Tailwind CSS
 
-## Getting Started
+## Project Structure
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week7-Assignment.md` file
-4. Use the provided templates and configuration files as a starting point
+```
+├── backend/                 # Express.js backend
+│   ├── models/             # MongoDB models
+│   ├── routes/             # API routes
+│   ├── middleware/         # Custom middleware
+│   ├── server.js           # Main server file
+│   ├── package.json        # Backend dependencies
+│   └── .env.example        # Environment variables template
+├── frontend/               # React frontend
+│   ├── public/             # Static assets
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── App.js          # Main App component
+│   │   ├── index.js        # Entry point
+│   │   └── index.css       # Global styles with Tailwind
+│   ├── package.json        # Frontend dependencies
+│   ├── tailwind.config.js  # Tailwind configuration
+│   └── postcss.config.js   # PostCSS configuration
+└── README.md               # This file
+```
 
-## Files Included
+## Prerequisites
 
-- `Week7-Assignment.md`: Detailed assignment instructions
-- `.github/workflows/`: GitHub Actions workflow templates
-- `deployment/`: Deployment configuration files and scripts
-- `.env.example`: Example environment variable templates
-- `monitoring/`: Monitoring configuration examples
+- Node.js (v14 or higher)
+- MongoDB (local or MongoDB Atlas)
+- npm or yarn
 
-## Requirements
+## Installation
 
-- A completed MERN stack application from previous weeks
-- Accounts on the following services:
-  - GitHub
-  - MongoDB Atlas
-  - Render, Railway, or Heroku (for backend)
-  - Vercel, Netlify, or GitHub Pages (for frontend)
-- Basic understanding of CI/CD concepts
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd deployment-and-devops-essentials-Favgirlfr
+   ```
 
-## Deployment Platforms
+2. Install backend dependencies:
+   ```bash
+   cd backend
+   npm install
+   ```
 
-### Backend Deployment Options
-- **Render**: Easy to use, free tier available
-- **Railway**: Developer-friendly, generous free tier
-- **Heroku**: Well-established, extensive documentation
+3. Install frontend dependencies:
+   ```bash
+   cd ../frontend
+   npm install
+   ```
 
-### Frontend Deployment Options
-- **Vercel**: Optimized for React apps, easy integration
-- **Netlify**: Great for static sites, good CI/CD
-- **GitHub Pages**: Free, integrated with GitHub
+4. Set up environment variables:
+   - Copy `backend/.env.example` to `backend/.env`
+   - Update the `MONGO_URI` with your MongoDB connection string
 
-## CI/CD Pipeline
+## Running the Application
 
-The assignment includes templates for setting up GitHub Actions workflows:
-- `frontend-ci.yml`: Tests and builds the React application
-- `backend-ci.yml`: Tests the Express.js backend
-- `frontend-cd.yml`: Deploys the frontend to your chosen platform
-- `backend-cd.yml`: Deploys the backend to your chosen platform
+1. Start the backend server:
+   ```bash
+   cd backend
+   npm run dev
+   ```
+   The backend will run on http://localhost:5000
 
-## Submission
+2. Start the frontend development server:
+   ```bash
+   cd frontend
+   npm start
+   ```
+   The frontend will run on http://localhost:3000
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+3. Open your browser and navigate to http://localhost:3000
 
-1. Complete all deployment tasks
-2. Set up CI/CD pipelines with GitHub Actions
-3. Deploy both frontend and backend to production
-4. Document your deployment process in the README.md
-5. Include screenshots of your CI/CD pipeline in action
-6. Add URLs to your deployed applications
+## API Endpoints
 
-## Resources
+- `GET /api/recipes` - Get all recipes
+- `GET /api/recipes/:id` - Get a single recipe
+- `POST /api/recipes` - Create a new recipe
+- `PUT /api/recipes/:id` - Update a recipe
+- `DELETE /api/recipes/:id` - Delete a recipe
 
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
-- [Render Documentation](https://render.com/docs)
-- [Railway Documentation](https://docs.railway.app/)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Netlify Documentation](https://docs.netlify.com/) 
+## Technologies Used
+
+- **Backend:**
+  - Node.js
+  - Express.js
+  - MongoDB with Mongoose
+  - CORS
+
+- **Frontend:**
+  - React
+  - Axios for API calls
+  - Tailwind CSS for styling
+
+## Deployment
+
+This application is prepared for deployment following the Week 7 assignment requirements. Refer to `Week7-Assignment.md` for detailed deployment instructions.
+
+## License
+
+This project is part of the MERN Stack Development course.
